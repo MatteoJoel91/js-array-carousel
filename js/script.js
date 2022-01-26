@@ -40,20 +40,36 @@ const text = [
 ]
 
 let slidesSX = '';
-let slideDX = '';
+let slidesDX = '';
 
 for (let i = 0; i < items.length; i++){
     slidesSX += `<div class="item-img">
                     <img src="${items[i]}">
                 </div>`;
 
-
-
+    slidesDX += `<div class="img-destra">
+                    <img src="${items[i]}">
+                </div>
+                
+                <div class="prev">
+                    <i class="fas fa-arrow-circle-up arrow-up"></i>
+                </div>
+                <div class="next">
+                    <i class="fas fa-arrow-circle-down arror-bot"></i>
+                </div> 
+                `;
 }
 
 // creo le slide
 let imgSinistra = document.querySelector('.container-img-sx')
 imgSinistra.innerHTML = slidesSX;
+
+let imgDestra = document.querySelector('.container-img-dx')
+imgDestra.innerHTML = slidesDX;
+
+// freccie UP / BOT
+
+
 
 // inizializziamo una variabile che mi tenga traccia della slide attiva
 let slideCorrente = 0;
