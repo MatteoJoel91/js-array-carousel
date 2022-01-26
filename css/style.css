@@ -52,13 +52,15 @@
     object-fit: cover;
     width: 100%;
     height: 100%;
+    opacity: 0.4;
 }
 
 .bordo img{
     border: solid 2px white;
+    opacity: 1;
 }
 
-.opaco-nero-1{
+/* .opaco-nero-1{
     width: 100%;
     height: 20%;
     position: absolute;
@@ -97,7 +99,7 @@
     background-color: rgba(0, 0, 0, 0.3);
     top: 80%;
     z-index: 1;
-}
+} */
 
 .prev{
     position: absolute;
