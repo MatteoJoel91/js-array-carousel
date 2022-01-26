@@ -3,3 +3,48 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+.container{
+    background-color: lightgrey;
+    height: 100vh;
+    position: relative;
+}
+
+
+.slide{
+    width: 50%;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+.container-img-sx{
+    width: 65%;
+    height: 300px;
+    background-color: burlywood;
+}
+
+.container-img-dx{
+    width: 35%;
+    height: 300px;
+    background-color: cadetblue;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.test{
+    width: 100%;
+    height: 20%;
+    background-color: chocolate;
+}
+
+.test-2{
+    width: 100%;
+    height: 20%;
+    background-color: green;
+}
