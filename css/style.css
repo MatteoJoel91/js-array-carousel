@@ -14,7 +14,6 @@
 
 .slide{
     width: 50%;
-    height: 300px;
     top: 50%;
     left: 50%;
     position: absolute;
@@ -23,28 +22,27 @@
 }
 
 .container-img-sx{
-    width: 65%;
-    height: 300px;
+    width: 70%;
+    height: 400px;
     background-color: burlywood;
 }
 
 .container-img-dx{
-    width: 35%;
-    height: 300px;
+    width: 30%;
+    height: 400px;
     background-color: cadetblue;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
 
-.test{
+.img-destra{
     width: 100%;
     height: 20%;
-    background-color: chocolate;
 }
 
-.test-2{
+.img-destra img{
+    object-fit: cover;
     width: 100%;
-    height: 20%;
-    background-color: green;
+    height: 100%;
 }
