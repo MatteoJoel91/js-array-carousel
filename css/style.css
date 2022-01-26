@@ -27,6 +27,12 @@
     background-color: burlywood;
 }
 
+.container-img-sx img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
 .container-img-dx{
     width: 30%;
     height: 400px;
