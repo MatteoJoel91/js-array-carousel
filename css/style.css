@@ -36,7 +36,7 @@
 .container-img-dx{
     width: 30%;
     height: 400px;
-    background-color: cadetblue;
+    background-color: black;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -51,8 +51,10 @@
 .img-destra img{
     object-fit: cover;
     width: 100%;
-    height: 100%;
+    height: 100%;  
 }
+
+
 
 .prev{
     position: absolute;
@@ -60,7 +62,7 @@
     left: 50%;
     width: 50px;
     height: 50px;
-    color: black;
+    color: white;
     text-align: center;
     line-height: 50px;
     font-size: 30px;
@@ -74,7 +76,7 @@
     left: 50%;
     width: 50px;
     height: 50px;
-    color: black;
+    color: white;
     text-align: center;
     line-height: 50px;
     font-size: 30px;
