@@ -43,10 +43,12 @@ let slidesSX = '';
 let slidesDX = '';
 
 for (let i = 0; i < items.length; i++){
+    // Immagini a sinistra
     slidesSX += `<div class="item-img">
                     <img src="${items[i]}">
                 </div>`;
 
+    // Immagini a destra + freccie
     slidesDX += `<div class="img-destra">
                     <img src="${items[i]}">
                 </div>
@@ -56,8 +58,7 @@ for (let i = 0; i < items.length; i++){
                 </div>
                 <div class="next">
                     <i class="fas fa-arrow-circle-down arror-bot"></i>
-                </div> 
-                `;
+                </div>`;
 }
 
 // creo le slide
@@ -67,12 +68,12 @@ imgSinistra.innerHTML = slidesSX;
 let imgDestra = document.querySelector('.container-img-dx')
 imgDestra.innerHTML = slidesDX;
 
-// freccie UP / BOT
-
-
 
 // inizializziamo una variabile che mi tenga traccia della slide attiva
 let slideCorrente = 0;
 
 let immages = document.getElementsByClassName('item-img');
 immages[slideCorrente].classList.add('active');
+
+let imgCorrente = document. getElementsByClassName('img-destra');
+imgCorrente[slideCorrente].classList.add('bordo');
