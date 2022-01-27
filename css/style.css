@@ -21,10 +21,25 @@
     display: flex;
 }
 
+.testo{
+    position: absolute;
+    margin-right: 5%;
+    right: 2%;
+    bottom: 5%;
+    text-align: right;
+    color: white;
+    display: none;
+}
+
+.testo.active{
+    display: block;
+}
+
 .container-img-sx{
     width: 70%;
     height: 400px;
-
+    display: flex;
+    position: relative;
 }
 
 .item-img{

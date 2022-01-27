@@ -41,13 +41,19 @@ const text = [
 
 let slidesSX = '';
 let slidesDX = '';
+let testoDX = '';
 
 
 for (let i = 0; i < items.length; i++){
     // Immagini a sinistra
     slidesSX += `<div class="item-img">
                     <img src="${items[i]}">
+                </div>
+                <div class="testo">
+                    <h1> ${title[i]} </h1>
+                    <p> ${text[i]} </p>
                 </div>`;
+    
 
     // Immagini a destra
     slidesDX += `<div class="img-destra">
@@ -70,13 +76,13 @@ let slideCorrente = 0;
 let immages = document.getElementsByClassName('item-img');
 immages[slideCorrente].classList.add('active');
 
+let info = document.getElementsByClassName('testo');
+info[slideCorrente].classList.add('active');
+
 let imgCorrente = document. getElementsByClassName('img-destra');
 imgCorrente[slideCorrente].classList.add('bordo');
 
-// creo una funzione al click di 'frecciaPREV'
-
-
-
+// creo una funzione al click di 'frecciaNEXT'
 let frecciaNEXT = document.querySelector('.next');
 frecciaNEXT.addEventListener('click',
 
@@ -84,31 +90,48 @@ frecciaNEXT.addEventListener('click',
            if(slideCorrente < items.length -1) {
                 immages[slideCorrente].classList.remove('active');
                 imgCorrente[slideCorrente].classList.remove('bordo');
+                info[slideCorrente].classList.remove('active');
                 slideCorrente++;
                 immages[slideCorrente].classList.add('active');
                 imgCorrente[slideCorrente].classList.add('bordo');
+                info[slideCorrente].classList.add('active');
            }
            else
            {
                 immages[slideCorrente].classList.remove('active');
                 imgCorrente[slideCorrente].classList.remove('bordo');
+                info[slideCorrente].classList.remove('active');
                 slideCorrente = 0;
                 immages[slideCorrente].classList.add('active');
                 imgCorrente[slideCorrente].classList.add('bordo');
+                info[slideCorrente].classList.add('active');
            }    
         }
 );
 
+// creo una funzione al click di 'frecciaPREV'
 let frecciaPREV = document.querySelector('.prev');
 frecciaPREV.addEventListener('click',
 
         function() {
-            if(slideCorrente < items.length) {
+            if(slideCorrente > 0) {
                 immages[slideCorrente].classList.remove('active');
                 imgCorrente[slideCorrente].classList.remove('bordo');
+                info[slideCorrente].classList.remove('active');
                 slideCorrente--;
                 immages[slideCorrente].classList.add('active');
                 imgCorrente[slideCorrente].classList.add('bordo');
+                info[slideCorrente].classList.add('active');
             }
+            else
+           {
+                immages[slideCorrente].classList.remove('active');
+                imgCorrente[slideCorrente].classList.remove('bordo');
+                info[slideCorrente].classList.remove('active');
+                slideCorrente = items.length -1;
+                immages[slideCorrente].classList.add('active');
+                imgCorrente[slideCorrente].classList.add('bordo');
+                info[slideCorrente].classList.add('active');
+           } 
         }
 );
