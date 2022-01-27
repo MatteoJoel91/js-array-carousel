@@ -42,22 +42,16 @@ const text = [
 let slidesSX = '';
 let slidesDX = '';
 
+
 for (let i = 0; i < items.length; i++){
     // Immagini a sinistra
     slidesSX += `<div class="item-img">
                     <img src="${items[i]}">
                 </div>`;
 
-    // Immagini a destra + freccie
+    // Immagini a destra
     slidesDX += `<div class="img-destra">
                     <img src="${items[i]}">
-                </div>
-                
-                <div class="prev">
-                    <i class="fas fa-arrow-circle-up arrow-up"></i>
-                </div>
-                <div class="next">
-                    <i class="fas fa-arrow-circle-down arror-bot"></i>
                 </div>`;
 }
 
@@ -69,11 +63,32 @@ let imgDestra = document.querySelector('.container-img-dx')
 imgDestra.innerHTML = slidesDX;
 
 
-// inizializziamo una variabile che mi tenga traccia della slide attiva
+// variabile traccia attiva
 let slideCorrente = 0;
+
 
 let immages = document.getElementsByClassName('item-img');
 immages[slideCorrente].classList.add('active');
 
 let imgCorrente = document. getElementsByClassName('img-destra');
 imgCorrente[slideCorrente].classList.add('bordo');
+
+// creo una funzione al click di 'frecciaPREV'
+
+let frecciaPREV = document.querySelector('.prev');
+
+let frecciaNEXT = document.querySelector('.next');
+frecciaNEXT.addEventListener('click',
+
+       function() {
+            immages[slideCorrente].classList.remove('active');
+            console.log(immages);
+            imgCorrente[slideCorrente].classList.remove('bordo');
+            console.log(imgCorrente);
+            slideCorrente++;
+            console.log(slideCorrente);
+            immages[slideCorrente].classList.add('active');
+            imgCorrente[slideCorrente].classList.add('bordo');
+       }
+    
+);
