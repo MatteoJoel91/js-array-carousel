@@ -60,7 +60,7 @@ let imgSinistra = document.querySelector('.container-img-sx')
 imgSinistra.innerHTML = slidesSX;
 
 let imgDestra = document.querySelector('.container-img-dx')
-imgDestra.innerHTML = slidesDX;
+imgDestra.innerHTML += slidesDX;
 
 
 // variabile traccia attiva
@@ -75,20 +75,40 @@ imgCorrente[slideCorrente].classList.add('bordo');
 
 // creo una funzione al click di 'frecciaPREV'
 
-let frecciaPREV = document.querySelector('.prev');
+
 
 let frecciaNEXT = document.querySelector('.next');
 frecciaNEXT.addEventListener('click',
 
-       function() {
-            immages[slideCorrente].classList.remove('active');
-            console.log(immages);
-            imgCorrente[slideCorrente].classList.remove('bordo');
-            console.log(imgCorrente);
-            slideCorrente++;
-            console.log(slideCorrente);
-            immages[slideCorrente].classList.add('active');
-            imgCorrente[slideCorrente].classList.add('bordo');
-       }
-    
+        function() {
+           if(slideCorrente < items.length -1) {
+                immages[slideCorrente].classList.remove('active');
+                imgCorrente[slideCorrente].classList.remove('bordo');
+                slideCorrente++;
+                immages[slideCorrente].classList.add('active');
+                imgCorrente[slideCorrente].classList.add('bordo');
+           }
+           else
+           {
+                immages[slideCorrente].classList.remove('active');
+                imgCorrente[slideCorrente].classList.remove('bordo');
+                slideCorrente = 0;
+                immages[slideCorrente].classList.add('active');
+                imgCorrente[slideCorrente].classList.add('bordo');
+           }    
+        }
+);
+
+let frecciaPREV = document.querySelector('.prev');
+frecciaPREV.addEventListener('click',
+
+        function() {
+            if(slideCorrente < items.length) {
+                immages[slideCorrente].classList.remove('active');
+                imgCorrente[slideCorrente].classList.remove('bordo');
+                slideCorrente--;
+                immages[slideCorrente].classList.add('active');
+                imgCorrente[slideCorrente].classList.add('bordo');
+            }
+        }
 );
